@@ -101,7 +101,7 @@ body{
 	margin: 10px;
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 20cm){
 
 	#center_column{
 	position: absolute;
