@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="it">
+
+    <head>
+        <meta charset="utf-8">
+        <title>ML notes</title>
+        <meta name="author" content="Emiliano">
+        <link rel="stylesheet" href="css/style.css?v=1.0">
+        <script type="text/javascript" src="js/script.js"></script>
+    </head>
+
+    <body>
+        <div id="center_column">
+            <div id="main_title"> ML para dummies</div>
+
+            <div class="info_box">
+                <h1> Decision Trees </h1>
+                <i>Maybe you are, and maybe you aren't. The White Wizard will know. - Treebeard a poorly trained decision tree can't classify Merry and Pippin as hobbits</i><br>
+                <div class="info_text">
+                    <p>The number of distinct truth table for n variables are 2^(2^n) the first 2 is for the output value, 2^n are the number of rows.</p>
+                    <p>An hypothesis for conjunctive functions can be represented with a vector of n features. The vector is filled with 0, 1, ? (don't care), and null. Since all hypothesis with at least a null are equivalent the |H| = 3^n + 1</p>
+                    <p>Given two hypotheses h1 and h2, h1 is more general than or equal to h2 (h1 >= h2) iff every instance that satisfies h2 also satisfies h1.</p>
+                    <p>Given two hypotheses h1 and h2, h1 is (strictly) more general than h2 (h1>h2) iff h1 >= h2 and it is not the case that h2 >= h1.</p>
+                    <p>To decide how to split the data when building a tree we use entropy. Given a dataset D with c categories entropy is defined as: 
+                    </p><img src="./img/0.png"  class="equation_img" />
+                    Where p_i is the percentage of the data belonging to that class.
+                    <p>We pick the feature that gives use the highest information gain, which is defined as</p>
+                    <img src="./img/1.png"  class="equation_img" />
+                    <p>Each branch of the tree defines a rule. Each rule has a support |D_v| / |D| and a confidence |D_v+| / |D_v|</p>
+                    <p>Building a tree is expensive and may lead to overfitting of the data, i.e. when the hypothesis we've found works worst on independent test data. So we must prune the tree.<br>We can either pre-prune, that is, we stop growing the tree when we have no sufficient data left or post-prune, when we grow the full tree then remove sub-trees with insufficient evidence.<br>We label the newly created leaf with a majority function evaluated on the subtree.</p>
+                </div>
+            </div>
+
+            <div class="info_box">
+                <h1>Performance Evaluation</h1>
+                <i>I can see the confusion matrix - Neo </i><br>
+                <div class="info_text"></div>
+            </div>   
+
+            <div class="info_box">
+                <h1></h1>
+                <i></i><br>
+                <div class="info_text"></div>
+            </div> 
+
+
+        </div>
+    </body>
+
+</html>
