@@ -86,7 +86,7 @@ body{
 	flex-wrap: wrap;
 	flex-direction: column;
 	align-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 }
 
 .info_text p::first-letter{
@@ -98,10 +98,13 @@ body{
 	position: relative;
 	max-width: 80%;
 	min-width: initial;
+	max-height: 60px;
 	margin: 10px;
+
+	align-self: center;
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 20cm){
 
 	#center_column{
 	position: absolute;

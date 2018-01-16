@@ -1,50 +1,82 @@
 <!doctype html>
 <html lang="it">
 
-    <head>
-        <meta charset="utf-8">
-        <title>ML notes</title>
-        <meta name="author" content="Emiliano">
-        <link rel="stylesheet" href="css/style.css?v=1.0">
-        <script type="text/javascript" src="js/script.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>ML notes</title>
+    <meta name="author" content="Emiliano">
+    <link rel="stylesheet" href="css/style.css?v=1.0">
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
 
-    <body>
-        <div id="center_column">
-            <div id="main_title"> ML para dummies</div>
-
-            <div class="info_box">
-                <h1> Decision Trees </h1>
-                <i>Maybe you are, and maybe you aren't. The White Wizard will know. - Treebeard a poorly trained decision tree can't classify Merry and Pippin as hobbits</i><br>
-                <div class="info_text">
-                    <p>The number of distinct truth table for n variables are 2^(2^n) the first 2 is for the output value, 2^n are the number of rows.</p>
-                    <p>An hypothesis for conjunctive functions can be represented with a vector of n features. The vector is filled with 0, 1, ? (don't care), and null. Since all hypothesis with at least a null are equivalent the |H| = 3^n + 1</p>
-                    <p>Given two hypotheses h1 and h2, h1 is more general than or equal to h2 (h1 >= h2) iff every instance that satisfies h2 also satisfies h1.</p>
-                    <p>Given two hypotheses h1 and h2, h1 is (strictly) more general than h2 (h1>h2) iff h1 >= h2 and it is not the case that h2 >= h1.</p>
-                    <p>To decide how to split the data when building a tree we use entropy. Given a dataset D with c categories entropy is defined as: 
-                    </p><img src="./img/0.png"  class="equation_img" />
-                    Where p_i is the percentage of the data belonging to that class.
-                    <p>We pick the feature that gives use the highest information gain, which is defined as</p>
-                    <img src="./img/1.png"  class="equation_img" />
-                    <p>Each branch of the tree defines a rule. Each rule has a support |D_v| / |D| and a confidence |D_v+| / |D_v|</p>
-                    <p>Building a tree is expensive and may lead to overfitting of the data, i.e. when the hypothesis we've found works worst on independent test data. So we must prune the tree.<br>We can either pre-prune, that is, we stop growing the tree when we have no sufficient data left or post-prune, when we grow the full tree then remove sub-trees with insufficient evidence.<br>We label the newly created leaf with a majority function evaluated on the subtree.</p>
-                </div>
+<body>
+    <div id="center_column">
+        <div id="main_title"> ML para dummies</div>
+        <div class="info_box">
+            <h1> Decision Trees </h1>
+            <i>Maybe you are, and maybe you aren't. The White Wizard will know. - Treebeard a poorly trained decision tree can't classify Merry and Pippin as hobbits</i>
+            <br>
+            <div class="info_text">
+                <p>The number of distinct truth table for n variables are 2^(2^n) the first 2 is for the output value, 2^n are the number of rows.</p>
+                <p>An hypothesis for conjunctive functions can be represented with a vector of n features. The vector is filled with 0, 1, ? (don't care), and null. Since all hypothesis with at least a null are equivalent the |H| = 3^n + 1</p>
+                <p>Given two hypotheses h1 and h2, h1 is more general than or equal to h2 (h1 >= h2) iff every instance that satisfies h2 also satisfies h1.</p>
+                <p>Given two hypotheses h1 and h2, h1 is (strictly) more general than h2 (h1>h2) iff h1 >= h2 and it is not the case that h2 >= h1.</p>
+                <p>To decide how to split the data when building a tree we use entropy. Given a dataset D with c categories entropy is defined as:
+                </p><img src="./img/0.png" class="equation_img" /> Where p_i is the percentage of the data belonging to that class.
+                <p>We pick the feature that gives use the highest information gain, which is defined as</p>
+                <img src="./img/1.png" class="equation_img" />
+                <p>Each branch of the tree defines a rule. Each rule has a support |D_v| / |D| and a confidence |D_v+| / |D_v|</p>
+                <p>Building a tree is expensive and may lead to overfitting of the data, i.e. when the hypothesis we've found works worst on independent test data. So we must prune the tree.
+                    <br>We can either pre-prune, that is, we stop growing the tree when we have no sufficient data left or post-prune, when we grow the full tree then remove sub-trees with insufficient evidence.
+                    <br>We label the newly created leaf with a majority function evaluated on the subtree.</p>
             </div>
-
-            <div class="info_box">
-                <h1>Performance Evaluation</h1>
-                <i>I can see the confusion matrix - Neo </i><br>
-                <div class="info_text"></div>
-            </div>   
-
-            <div class="info_box">
-                <h1></h1>
-                <i></i><br>
-                <div class="info_text"></div>
-            </div> 
-
-
         </div>
-    </body>
+        <div class="info_box">
+            <h1>Performance Evaluation</h1>
+            <i>I can see the confusion matrix - Neo </i>
+            <br>
+            <div class="info_text">
+                <p>A confusion matrix ( or contigency table ) is a table of four elements:
+                    <ul>
+                        <li>TP: “true positive”, i.e., number (or %) of positive instances classified as positive by the system</li>
+                        <li>FP: “false positive”, should be negative, the system classified as positive </li>
+                        <li>TN: “true negative” negative instances classified as negative</li>
+                        <li>FN: “false negative” positive instances classified as negative</li>
+                    </ul>
+                </p>
+                <p>We also define the following measures:
+                    <ul>
+                        <li>Total = TP + FP + TN + FN</li>
+                        <li>Accuracy = (TP + TN) / Total</li>
+                        <li>Precision = TP / ( TP + FP ) </li>
+                        <li>Recall = TP / ( TP + FN )</li>
+                        <li>F-Measure = 2( P x R ) / ( P + R )</li>
+                    </ul>
+                </p>
+                <p>The Receiver Operating Characteristic curve ( ROC curve hello biometrics ) is a plot of the true positive rate against the false positive rate as the discrimination threshold is varied. </p>
+                <p>Given an hypotesis we must evaluate the error. For a sample of the data the sample error is:</p>
+                <img src="./img/2.png" class="equation_img" /> Where the delta function is 1 if the two arguments are different, 0 otherwise.
+                <p>The true error instead is: </p>
+                <img src="./img/3.png" class="equation_img" /> Where D is a probability distribution according to which we pick the samples.
+                <p>Call p the true error probability of h. We know that we made r errors over n instances. We can estimate p since our error function follows a bynomial distribution with mean value p. </p>
+                <p>Stuff you need to know about the bynomial distribution: </p>
+                <img src="./img/4.png" class="equation_img" />
+                <img src="./img/5.png" class="equation_img" />
+                <img src="./img/6.png" class="equation_img" />
+                <p>Now forget all about it since for a large number of samples the bynomial distribution approximates a normal distribution. This is thanks to the Central Limit Theorem which states that the arithmetic mean of a sufficiently large number of experiments of independent random variables, each with a well-defined expected value and well-defined variance, will be approximately normally distributed. This is also known as when you don't know the underlying distribution go for a gaussian. </p>
+                <img src="./img/7.png" class="equation_img" /> Or with Bessel's correction for small ns
+                <img src="./img/8.png" class="equation_img" />
+                <p>Also there's this thing called bias which I guess is important or something: </p>
+                <img src="./img/9.png" class="equation_img" />
+            </div>
+        </div>
+        <div class="info_box">
+            <h1></h1>
+            <i></i>
+            <br>
+            <div class="info_text"></div>
+        </div>
+    </div>
+</body>
 
 </html>
