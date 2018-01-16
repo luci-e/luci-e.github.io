@@ -61,15 +61,65 @@
                 <p>Call p the true error probability of h. We know that we made r errors over n instances. We can estimate p since our error function follows a bynomial distribution with mean value p. </p>
                 <p>Stuff you need to know about the bynomial distribution: </p>
                 <img src="./img/4.png" class="equation_img" />
-                <img src="./img/5.png" class="equation_img" />
-                <img src="./img/6.png" class="equation_img" />
                 <p>Now forget all about it since for a large number of samples the bynomial distribution approximates a normal distribution. This is thanks to the Central Limit Theorem which states that the arithmetic mean of a sufficiently large number of experiments of independent random variables, each with a well-defined expected value and well-defined variance, will be approximately normally distributed. This is also known as when you don't know the underlying distribution go for a gaussian. </p>
                 <img src="./img/7.png" class="equation_img" /> Or with Bessel's correction for small ns
                 <img src="./img/8.png" class="equation_img" />
                 <p>Also there's this thing called bias which I guess is important or something: </p>
                 <img src="./img/9.png" class="equation_img" />
+                <p>A confidence interval for an estimate Δ is an interval [LB,UB] that includes Δ with probability N% (with probability N% we have LB≤Δ≤UB) in our case we're interested in:</p>
+                <img src="./img/10.png" class="equation_img" />
+                <p>Since the estimated error and true error follow a gaussian with the same mean they will also have the same standard deviation. For a normal distribution we have these things called z-tables that gives us the integral of half the curve at a distance z from the mean. The z-score is simply z / sigma. Normally the z-tables are given for the standard deviation = 1</p>
+                <p>Finally we can compute our confidence interval as </p>
+                <img src="./img/11.png" class="equation_img" />
+                <p>When we have 2 hypothesis it may be that one is better than the other. Clearly the first thing we can compute is the error difference</p>
+                <img src="./img/12.png" class="equation_img" />
+                <p>We must then test our supposition against the null hypothesis, that is the one that says what we're claiming isn't true. We have 3 cases depending on what we're testing.
+                    <ul>
+                        <li>Two tail test, if d != 0:
+                            <ul>
+                                <li>H0: data do not support that there is a difference between h1 and h2, hence errorD(h1)-errorD (h2) = 0 </li>
+                                <li>H1: there is indeed a (statistically significant) difference between h1 and h2 </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            One-tail right-test (we find that d > 0)
+                            <ul>
+                                <li>H0: data do not support that h2>h1 </li>
+                                <li>H1: h2>h1 (error of h1 is significantly lower)</li>
+                            </ul>
+                        </li>
+
+                        <li>One-tail left-test (we find that d < 0) 
+                            <ul>
+                                <li>H0: data do not support that h2 < h1 </li>
+                                <li>H1: h1>h2 (error of h1 is significantly higher) </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
+
+                <p>We also introduce the concept of p-value, that is the probability of of observing a given value. </p>
+
+                <p>Since our error difference is a difference of normally distributed random variables it must be a normally distributed random variable itself. With standard deviation equal to the sum of the standard deviations </p>
+
+                <p>In the two tail test we accept the null hypothesis if the likelyhood that the mean error difference is 0 lies within 2 standard deviation </p>
+                <img src="./img/13.png" class="equation_img" />
+                Since we have z we can now compute whether we lie in the non-critical region  (N ≤ 95%), where we accept the null hypothesis.
+
+                <p>In the one tail test, we compute the z-value and 1 - the probability of lying on the right (left test) or on the left (right test) must be less than the p-value</p>
+
+                <p>Something something something k-fold cross validation something something something completely skipped</p>
             </div>
         </div>
+
+        <div class="info_box">
+            <h1>Neural Networks</h1>
+            <i>After discovering he was just a pile of linear algebra the NN began his gradient descent towards alcoholism - from The tales of the Perceptrons</i>
+            <br>
+            <div class="info_text"></div>
+        </div>
+
         <div class="info_box">
             <h1></h1>
             <i></i>
