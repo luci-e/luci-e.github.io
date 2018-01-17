@@ -81,7 +81,6 @@
                                 <li>H1: there is indeed a (statistically significant) difference between h1 and h2 </li>
                             </ul>
                         </li>
-
                         <li>
                             One-tail right-test (we find that d > 0)
                             <ul>
@@ -89,37 +88,37 @@
                                 <li>H1: h2>h1 (error of h1 is significantly lower)</li>
                             </ul>
                         </li>
-
-                        <li>One-tail left-test (we find that d < 0) 
-                            <ul>
-                                <li>H0: data do not support that h2 < h1 </li>
-                                <li>H1: h1>h2 (error of h1 is significantly higher) </li>
-                            </ul>
-                        </li>
+                        <li>One-tail left-test (we find that d
+                            < 0) <ul>
+                                <li>H0: data do not support that h2
+                                    < h1 </li>
+                                        <li>H1: h1>h2 (error of h1 is significantly higher) </li>
+                    </ul>
+                    </li>
                     </ul>
                 </p>
-
                 <p>We also introduce the concept of p-value, that is the probability of of observing a given value. </p>
-
                 <p>Since our error difference is a difference of normally distributed random variables it must be a normally distributed random variable itself. With standard deviation equal to the sum of the standard deviations </p>
-
                 <p>In the two tail test we accept the null hypothesis if the likelyhood that the mean error difference is 0 lies within 2 standard deviation </p>
-                <img src="./img/13.png" class="equation_img" />
-                Since we have z we can now compute whether we lie in the non-critical region  (N ≤ 95%), where we accept the null hypothesis.
-
+                <img src="./img/13.png" class="equation_img" /> Since we have z we can now compute whether we lie in the non-critical region (N ≤ 95%), where we accept the null hypothesis.
                 <p>In the one tail test, we compute the z-value and 1 - the probability of lying on the right (left test) or on the left (right test) must be less than the p-value</p>
-
                 <p>Something something something k-fold cross validation something something something completely skipped</p>
             </div>
         </div>
-
         <div class="info_box">
             <h1>Neural Networks</h1>
             <i>After discovering he was just a pile of linear algebra the NN began his gradient descent towards alcoholism - from The tales of the Perceptrons</i>
             <br>
-            <div class="info_text"></div>
+            <div class="info_text">
+                <p>The simplest NN is a Perceptron that is a single layer network. The Perceptron has as state the weights vector and the threshold function. It takes in input a vector of values and outputs 1 or 0. So what it does is linearly separate an hyperspace.</p>
+                <img src="./img/14.png" class="equation_img" />
+                <p>How to train your perceptron: give him a hint of what's "right" by providing him with a training set, that is a pair of
+                    < input, expected output> and adjusting the weights at each iteration, also adjust the threshold at each iteration. You can initialize the threshold and weights at random, since by the Perceptron Convergence theorem IF the data is linearly separable then there exists a valid set of weight vector and threshold values pairs and the algorithm will eventually converge to one of them. On the other hand if it's not the algorithm will just cycle on a set of values</p>
+                <img src="./img/15.png" class="equation_img" />
+                Here the t_j are the training set outputs. In the slides there is an i on the weights because in multilayerd networks each neuron can be connected to multiple other neurons and the weights are on the edges of the graph but in Perceptrons we have the weights on the nodes so the i makes no feckin sense but nooo let's keep the notation all wibbly wobbly mixed right Mrs. Velardi? Ugh, I can't even. Anyway that's all for Perceptrons, NN in disguise.
+                <p>Multi-Layer networks are NN that can represent arbitrary functions. There's some math(sss) ahead so buckle up, get a cuppa, go review some matrix notation cause those sums are a fuckin eyesore and go look up the Chain rule for differentiation before starting otherwise the last part won't make sense. Or don't do any of that, I'm just a website not your father.</p>
+            </div>
         </div>
-
         <div class="info_box">
             <h1></h1>
             <i></i>
