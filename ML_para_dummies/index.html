@@ -114,10 +114,72 @@
                 <img src="./img/14.png" class="equation_img" />
                 <p>How to train your perceptron: give him a hint of what's "right" by providing him with a training set, that is a pair of
                     < input, expected output> and adjusting the weights at each iteration, also adjust the threshold at each iteration. You can initialize the threshold and weights at random, since by the Perceptron Convergence theorem IF the data is linearly separable then there exists a valid set of weight vector and threshold values pairs and the algorithm will eventually converge to one of them. On the other hand if it's not the algorithm will just cycle on a set of values</p>
-                <img src="./img/15.png" class="equation_img" />
-                Here the t_j are the training set outputs. In the slides there is an i on the weights because in multilayerd networks each neuron can be connected to multiple other neurons and the weights are on the edges of the graph but in Perceptrons we have the weights on the nodes so the i makes no feckin sense but nooo let's keep the notation all wibbly wobbly mixed right Mrs. Velardi? Ugh, I can't even. Anyway that's all for Perceptrons, NN in disguise.
-                <p>Multi-Layer networks are NN that can represent arbitrary functions. There's some math(sss) ahead so buckle up, get a cuppa, go review some matrix notation cause those sums are a fuckin eyesore and go look up the Chain rule for differentiation before starting otherwise the last part won't make sense. Or don't do any of that, I'm just a website not your father.</p>
+                <img src="./img/15.png" class="equation_img" /> Here the t_j are the training set outputs. In the slides there is an i on the weights because in multilayerd networks each neuron can be connected to multiple other neurons and the weights are on the edges of the graph but in Perceptrons we have the weights on the nodes so the i makes no feckin sense but nooo let's keep the notation all wibbly wobbly mixed right Mrs. Velardi? Ugh, I can't even. Anyway that's all for Perceptrons, NN in disguise.
+                <p>Multi-Layer networks are NN that can represent arbitrary functions. There's some math(sss) ahead so buckle up. These are the concepts that you must know before venturing any further:
+                    <ul>
+                        <li>Scalar field: a scalar field is a function that takes in input a vector and spits out a scalar.</li>
+                        <li>Vector field: a vector field is a function that takes in input a vector and spits out a vector.</li>
+                        <li>Gradient: the gradient is an operator that takes in input a scalar field and spits out a vector field that tells you the direction and magnitude of the greatest increase of the field in the immediate neighbourhood of any point. In 3 dimensions this is:
+                            <img src="./img/17.png" class="equation_img" />
+                        </li>
+                        <li>Chain Rule: the chain rule of differentation states that the derivative of a function y with respect to a variable x is equal to:
+                            <img src="./img/16.png" class="equation_img" />
+                            <br> where the v_i are any other intermediate variables. Note that variable here is used in a broad term, v_i might as well be functions themselves as long as they depend on each other as if they were in a chain. (so v_0 depends on v_1 which depends on v_2 etc. etc. which ultimately depend on x)
+                        </li>
+                    </ul>
+                    Just 4 things easy right? Ok let's go.
+                </p>
+                <p>So despite their fancy name le perceptron multicouche à rétropropagation, are actually a very weird name for a function that takes in input a vector and spits out a vector and additionally has an internal state given by a matrix of weights W and threshold values T.</p>
+                <p>Each node besides those in the first layer are in fact perceptrons, but we mentioned that we're going to do differentation so we need to change our phi function</p>
+                <img src="./img/18.png" class="equation_img" />
+                <br> This is called the sigmoid function, cause it looks like an S. This is the "standard" threshold function but there are others of course, the only real requirement is that the function is differentiable.
+                <p>Now I'm gonna use the matrix notation cause I find it easier to understand than all those indexed sums but whatever. So recall that our matrices are:
+                    <ul>
+                        <li>The W weights matrix, it is row-major like in C so the elements of this matrix are the transposed weights vectors for node i, so W[i][j] means the weight on the edge from node j to node i, if the nodes are not connected the weight is 0</li>
+                        <li> The tresholds T vector which is pretty self explanatory</li>
+                        <li> The outputs O matrix, which gets filled at each iteration, again row-major, so O[i] is the output from the ith layer. O[0] is thus our input</li>
+                        <li>The derivatives deltas of the error function E matrix which gets filled during the backpropagation phase</li>
+                    </ul>
+                </p>
+                <p>So for each node we have that </p>
+                <img src="./img/19.png" class="equation_img" />
+                <br> At this moment I realized that there may be no escaping from index hell, but let's see.
+                <p>What we want to minimize is our error function: </p>
+                <img src="./img/20.png" class="equation_img" />
+                <br> So I find this is a bit confusing cause it takes into account all the training data but we update our W at each iteration, so yeah technically we're always minimizing this function but really we're minimizing one element at a time.
+                <p>So we've run our inputs though the network now we got our O all filled up with values it's time to fill E. The first row is filled in a straightforward way, we just compute the squared error function and put in the values we get. Now this is the tricky part. What we want to do right now is update the weight of a single edge, from node j to node i. To do so we need to move against the gradient to settle in a nice local minimum. So: </p>
+                <img src="./img/21.png" class="equation_img" />
+                <br> We keep using eta as learning factor BECAUSE WE ARE FUKIN CONSISTENT.
+                <p> Ok so we want to calculate the derivative of the error function with respect to the weight of that edge but we don't have such a function. Fortunately, the chain rule comes to the rescue! We can compute:</p>
+                <img src="./img/22.png" class="equation_img" />
+                <p>
+                    <ul>
+                        <li>How the error function changes in respect to the output.</li>
+                        <li>How the output changes in respect to the net input</li>
+                        <li>How the net input changes in respect to the weight</li>
+                    </ul>
+                </p>
+                <img src="./img/23.png" class="equation_img" />
+                <img src="./img/24.png" class="equation_img" />
+                <img src="./img/25.png" class="equation_img" />
+                <img src="./img/26.png" class="equation_img" />
+                <br> Ok hold on we are almost done I swear!
+                <p>The last thing we need is to backpropagate the error. So for and output node we've just seen how to update the weight, that's just the learning factor times the derivative of the error function. So in general:
+                </p>
+                <img src="./img/27.png" class="equation_img" />
+                <p> For the hidden node we instead use:</p>
+                <img src="./img/28.png" class="equation_img" />
+                <br> So we just weight all the deltas from the nodes we give our output to by the the weights of the edges, that's why we say the error backpropagates.
+                <p>And that's it we're done! If you got so far congratulations that was something, you can pat yourself on the back now!</p>
             </div>
+        </div>
+        <div class="info_box">
+            <h1>Deep Learning</h1>
+            <img src="./img/wow.png" />
+            <br>
+            <i>We need to go deeper - Leonardo Deep Caprio</i>
+            <br>
+            <div class="info_text"></div>
         </div>
         <div class="info_box">
             <h1></h1>
