@@ -179,13 +179,30 @@
             <br>
             <i>We need to go deeper - Leonardo Deep Caprio</i>
             <br>
-            <div class="info_text"></div>
+            <div class="info_text">
+                <p>Federico said we can skip this!</p>
+                <iframe width="90%" height="803" src="https://www.youtube.com/embed/j3IJQXwah0E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
         </div>
+
+        <div class="info_box">
+            <h1>Ensemble Learning</h1>
+            <i>Learners Ensemble! - Nick "ML" Fury</i>
+            <br>
+            <div class="info_text">
+                <p>When we train an algorithm we always get an approximate model of the truth. Each model tries to fit some data. If we have many data we can derive multiple models and use them to make better predictions by taking each individual prediction and combining them in some way ( the easier being taking the majority for example ).</p>
+                <p>This works because if say each model has error rate epsilon, then the probability that the majority of n models is wrong is an hypergeometric variable X = Hyper( n , n/2 + 1, epsilon ) so even if the epsilon is relatively large, we can still make good guesses.</p>
+                <p>Homogenous ensembles: instead of using multiple algorithms and multiple data, we can use the same algorithm and feed them manipulated data. There are various methods for manipulating the data:</p>
+                <p>Bagging: we got some training data M with |M| = m and we produce some bags of n items. A bag is made by picking items with equal probability from the training data, with replacement. The data that was left unpicked when bagging is used as test data. This is also called 0.632 bootstrapping, cause names are hard.</p>
+                <img src="./img/29.png" class="equation_img" /></div>
+        </div>
+
         <div class="info_box">
             <h1></h1>
             <i></i>
             <br>
-            <div class="info_text"></div>
+            <div class="info_text">
+            </div>
         </div>
     </div>
 </body>
