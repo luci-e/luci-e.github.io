@@ -175,7 +175,7 @@
         </div>
         <div class="info_box">
             <h1>Deep Learning</h1>
-            <img src="./img/wow.png" />
+            <img src="./img/wow.png" class="equation_img" />
             <br>
             <i>We need to go deeper - Leonardo Deep Caprio</i>
             <br>
@@ -184,7 +184,6 @@
                 <iframe width="90%" height="803" src="https://www.youtube.com/embed/j3IJQXwah0E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
-
         <div class="info_box">
             <h1>Ensemble Learning</h1>
             <i>Learners Ensemble! - Nick "ML" Fury</i>
@@ -194,9 +193,25 @@
                 <p>This works because if say each model has error rate epsilon, then the probability that the majority of n models is wrong is an hypergeometric variable X = Hyper( n , n/2 + 1, epsilon ) so even if the epsilon is relatively large, we can still make good guesses.</p>
                 <p>Homogenous ensembles: instead of using multiple algorithms and multiple data, we can use the same algorithm and feed them manipulated data. There are various methods for manipulating the data:</p>
                 <p>Bagging: we got some training data M with |M| = m and we produce some bags of n items. A bag is made by picking items with equal probability from the training data, with replacement. The data that was left unpicked when bagging is used as test data. This is also called 0.632 bootstrapping, cause names are hard.</p>
-                <img src="./img/29.png" class="equation_img" /></div>
-        </div>
+                <img src="./img/29.png" class="equation_img" />
+                <p>Why is this useful? If we have many linear classifier for example, we can use and ensemble to classify data that is <b>not</b> linearly classifiable by training them on different bags, many linear functions along with the majority function can approximate well an arbitrary function. However bagging works on the assumption that all data is equal, that is the probability of misclassification is the same for all data points. This may not be true so we need to introduce other methods.</p>
+                <p>Boosting: or weighted bootstrapping is a variation on how data is picked at each bagging iterarion to correct on the errors of a previous iteration. The first round is the same as bagging. We then run the classifier on the data, see which instances it got wrong and increase the probability of them being picked in the next iteration ( while keeping the total to 1 ofc) </p>
+                <p>Adaboost</p>
+                <img src="./img/adaboost.jpg" class="equation_img" />
+                <br> Adaboost is a
+                <s>Crash Team Racing pro</s> popular boosting algorithm. Each classifier in Adaboost is given an "importance" alpha.
+                <img src="./img/30.png" class="equation_img" /> <p>So the more instances a classifier got correct the more it should be trusted. We then update the weights at each iteration according to the following rule:</p
+                <img src="./img/31.png" class="equation_img" />
+                <p>
+                Where Z_i is a normalization factor cause these are probabilities. So if you're an important classifier alpha is probably > 0, and you just need to do some correction. If alpha < 0 you got a lot of stuff wrong so you better focus on the few you got right so you increase their weight instead.</p>
+                <p>Finally to classify an instance you run all the classifier on some test data, each vote is weighted by the importance of the classifier, and the weighted majority wins. </p>
+                <img src="./img/32.png" class="equation_img" />
 
+                <p>Random forests: give a bag of data to each tree, at each node of the tree choose m features from the vector and split only on those features. ???. Profit.</p>
+
+                <p>Decorate: honestly I could pretend I care but I don't cause it's just 3 slides with text. You take a data set and build artificial examples somehow and then train on them  or something.</p>
+            </div>
+        </div>
         <div class="info_box">
             <h1></h1>
             <i></i>
