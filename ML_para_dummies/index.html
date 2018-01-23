@@ -200,16 +200,39 @@
                 <img src="./img/adaboost.jpg" class="equation_img" />
                 <br> Adaboost is a
                 <s>Crash Team Racing pro</s> popular boosting algorithm. Each classifier in Adaboost is given an "importance" alpha.
-                <img src="./img/30.png" class="equation_img" /> <p>So the more instances a classifier got correct the more it should be trusted. We then update the weights at each iteration according to the following rule:</p
-                <img src="./img/31.png" class="equation_img" />
-                <p>
-                Where Z_i is a normalization factor cause these are probabilities. So if you're an important classifier alpha is probably > 0, and you just need to do some correction. If alpha < 0 you got a lot of stuff wrong so you better focus on the few you got right so you increase their weight instead.</p>
-                <p>Finally to classify an instance you run all the classifier on some test data, each vote is weighted by the importance of the classifier, and the weighted majority wins. </p>
-                <img src="./img/32.png" class="equation_img" />
-
-                <p>Random forests: give a bag of data to each tree, at each node of the tree choose m features from the vector and split only on those features. ???. Profit.</p>
-
-                <p>Decorate: honestly I could pretend I care but I don't cause it's just 3 slides with text. You take a data set and build artificial examples somehow and then train on them  or something.</p>
+                <img src="./img/30.png" class="equation_img" />
+                <p>So the more instances a classifier got correct the more it should be trusted. We then update the weights at each iteration according to the following rule:
+                    </p> <img src="./img/31.png" class="equation_img" />
+                    <p>
+                        Where Z_i is a normalization factor cause these are probabilities. So if you're an important classifier alpha is probably > 0, and you just need to do some correction. If alpha
+                        < 0 you got a lot of stuff wrong so you better focus on the few you got right so you increase their weight instead.</p>
+                            <p>Finally to classify an instance you run all the classifier on some test data, each vote is weighted by the importance of the classifier, and the weighted majority wins. </p>
+                            <img src="./img/32.png" class="equation_img" />
+                            <p>Random forests: give a bag of data to each tree, at each node of the tree choose m features from the vector and split only on those features. ???. Profit.</p>
+                            <p>Decorate: honestly I could pretend I care but I don't cause it's just 3 slides with text. You take a data set and build artificial examples somehow and then train on them or something.</p>
+            </div>
+        </div>
+        <div class="info_box">
+            <h1>Support Vector Machine</h1>
+            <i>V[0] = "You can do it!"; V[1] = "We believe in you!"; V[2] = "You're the best"; - an example of SVM </i>
+            <br>
+            <div class="info_text">
+                <p>I don't know if I should do this part cause the slides are actually good since they're taken from somewhere else so... I dunno maybe I'll do it later.</p>
+            </div>
+        </div>
+        <div class="info_box">
+            <h1>Data Mining</h1>
+            <i>Did you know? It takes 41.7 seconds with an Apriori pickaxe to mine one block of data but only 9.4 with an FP-Tree one. Almost an order of magnitude faster! - from the Minedata wiki</i>
+            <br>
+            <div class="info_text">
+                <p>Oops no time for introduction, here's the stuff I'm going to revise before the exam</p>
+                <p>Important stuff:
+                    <ul>
+                        <li> Confidence (X->Y) = #tuples (transactions) containing both X & Y / #tuples containing only X , e.g,: Pr(Y|X) = Pr(X U Y ) / Pr (X)</li>
+                        <li>Support (X->Y) = #tuples containing both X & Y/ total number of tuples in the DB Pr(X U Y) (you can also specify absolute support, only denominator)
+                        </li>
+                    </ul>
+                </p>
             </div>
         </div>
         <div class="info_box">
