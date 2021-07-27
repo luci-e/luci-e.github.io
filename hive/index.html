@@ -7,19 +7,20 @@
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous">
 		</script>
 		<script src="script/script.js"></script>
+		<script type="text/javascript" src="script/CryptoJS v3.1.2/rollups/aes.js"></script>
 	</head>
 
 
 	<body>
 
 		<div id="bee_card">
-			<h1> Bzz Bzz pls give me the passcode and nobody gets hurt </h1>
+			<h1 id="bee_says"> Bzz Bzz pls give me the passcode and nobody gets hurt </h1>
 
-			<img src="img/bee.svg" style="width: 200px" /> 
+			<img src="img/bee.svg" style="width: 50%; margin-top: 2em;" /> 
 
 			<form>
-				<input placeholder="Passcode" type="text" name="passcode" >
-				<button>Submit</button>
+				<input placeholder="Passcode" type="text" id="passcode">
+				<button id="submit_button">Submit</button>
 			</form>
 		</div>
 

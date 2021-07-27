@@ -9,6 +9,7 @@ body{
 #bee_card{
 	width: 400px;
 	height: 600px;
+
 	background-color: #ffffb8;
 	z-index: 2;
 
@@ -19,6 +20,15 @@ body{
 
 	border: 2px dashed black;
 	border-radius: 10px;
+}
+
+@media screen and (max-width: 1080px ){
+	#bee_card{
+		width: 80vw;
+		height: 90vw;
+	}
+
+	img
 }
 
 .small_flower{
@@ -51,11 +61,18 @@ h1, button{
 }
 
 form{
-	margin-top: 1em
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	margin-top: 3em;
+	flex-grow: 2;
 }
+
 input {
-  margin: 40px 25px;
-  width: 200px;
+  width: 90%;
+  min-height: 2em;
   display: block;
   border: none;
   padding: 10px 0;
@@ -78,9 +95,9 @@ button {
   cursor: pointer;
   border-radius: 3px;
   padding: 6px;
-  width: 200px;
+  width: 40%;
+  min-height: 5em;
   color: white;
-  margin-left: 25px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 button:hover {
