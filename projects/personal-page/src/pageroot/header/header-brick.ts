@@ -42,8 +42,6 @@ export class HeaderBrick extends LitElement {
       }
 
       dark-mode-toggle {
-        --dark-mode-toggle-remember-icon-checked: url('checked.svg');
-        --dark-mode-toggle-remember-icon-unchecked: url('unchecked.svg');
         --dark-mode-toggle-remember-font: 0.75rem 'Helvetica';
         --dark-mode-toggle-legend-font: bold 0.85rem 'Helvetica';
         --dark-mode-toggle-label-font: 0.85rem 'Helvetica';
@@ -52,8 +50,8 @@ export class HeaderBrick extends LitElement {
       }
 
       #dark-mode-toggle-2 {
-        --dark-mode-toggle-dark-icon: url('./src/pageroot/header/sun.svg');
-        --dark-mode-toggle-light-icon: url('./src/pageroot/header/moon.svg');
+        --dark-mode-toggle-dark-icon: url('./assets/icons/sun.svg');
+        --dark-mode-toggle-light-icon: url('./assets/icons/moon.svg');
         --dark-mode-toggle-icon-size: 2rem;
         --dark-mode-toggle-icon-filter: invert(100%);
       }
@@ -65,9 +63,8 @@ export class HeaderBrick extends LitElement {
         color: inherit;
         text-decoration: none;
       }
-      
-      a{
 
+      a {
       }
     `,
   ];
@@ -79,7 +76,9 @@ export class HeaderBrick extends LitElement {
         <div><b>Emiliano Luci</b></div>
         <div><a href="#anchor-bio">Bio</a></div>
         <div><a href="#anchor-publications">Publications</a></div>
-        <div><a class="cv" target="”_blank”" href="./CV_emi.pdf">CV</a></div>
+        <div>
+          <a class="cv" target="”_blank”" href="./assets/CV_emi.pdf">CV</a>
+        </div>
         <dark-mode-toggle
           id="dark-mode-toggle-2"
           appearance="toggle"

@@ -76,7 +76,7 @@ export class BioBrick extends LitElement {
       <div class="pic_and_links">
         <div class="pic">
           <img
-            src="./src/pageroot/body/bio/my_photo.jpg"
+            src="./assets/my_photo.jpg"
             alt="hey look it's-a me"
           />
         </div>
