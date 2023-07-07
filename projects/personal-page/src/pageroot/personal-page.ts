@@ -1,7 +1,9 @@
 import { LitElement, html, css } from 'lit';
 import { property, customElement } from 'lit/decorators.js';
 
-const logo = new URL('../../../assets/open-wc-logo.svg', import.meta.url).href;
+import './header/header-brick.js';
+import './body/bio/bio-brick.js';
+import './body/publications/publication-brick.js'
 
 @customElement('personal-page')
 export class PersonalPage extends LitElement {
@@ -9,73 +11,42 @@ export class PersonalPage extends LitElement {
 
   static styles = css`
     :host {
-      min-height: 100vh;
+      min-height:100vh;
+      height: 100%;
+      width: 70%;
+      min-width: 20cm;
+      max-width: 25cm;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      font-size: calc(10px + 2vmin);
-      color: #1a2b42;
-      max-width: 960px;
-      margin: 0 auto;
-      text-align: center;
-      background-color: var(--personal-page-background-color);
+      border: solid;
+      border-color: var(--color-border);
+      border-width: 0 2px 0 2px;
+      background: var(--color-content-bg);
     }
 
-    main {
-      flex-grow: 1;
+    .content{
+      height: 100%;
+      width: 100%;
+      transform: translate(0, 50px);
     }
 
-    .logo {
-      margin-top: 36px;
-      animation: app-logo-spin infinite 20s linear;
-    }
-
-    @keyframes app-logo-spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
+    @media screen and (max-width: 20cm){
+      :host {
+        width: 100%;
+        min-width: 0;
       }
     }
 
-    .app-footer {
-      font-size: calc(12px + 0.5vmin);
-      align-items: center;
-    }
-
-    .app-footer a {
-      margin-left: 5px;
-    }
   `;
 
   render() {
     return html`
-      <main>
-        <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
-        <h1>${this.header}</h1>
-
-        <p>Edit <code>src/PersonalPage.ts</code> and save to reload.</p>
-        <a
-          class="app-link"
-          href="https://open-wc.org/guides/developing-components/code-examples"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Code examples
-        </a>
-      </main>
-
-      <p class="app-footer">
-        🚽 Made with love by
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/open-wc"
-          >open-wc</a
-        >.
-      </p>
+      <header-brick></header-brick>
+      <div class='content'>
+        <bio-brick></bio-brick>
+        <publication-brick></publication-brick>
+      </div>
     `;
   }
 }
