@@ -3,10 +3,11 @@
     "target": "es2019",
     "module": "esnext",
     "moduleResolution": "node",
+    "resolveJsonModule" : true,
+    "esModuleInterop": true,
     "noEmitOnError": true,
     "lib": ["es2017", "dom"],
     "strict": true,
-    "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "importHelpers": true,
@@ -14,7 +15,7 @@
     "sourceMap": true,
     "inlineSources": true,
     "rootDir": "./",
-    "incremental": true
+    "incremental": true, 
   },
   "include": ["**/*.ts"]
 }

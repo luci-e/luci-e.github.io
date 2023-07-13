@@ -1,10 +1,3 @@
-export class Author {
-    name: string;
-    
-    link: string;
-
-    constructor(name: string, link: string){
-        this.name = name;
-        this.link = link;
-    }
+export class author {
+    constructor(public name: string, public link: string, public orcid: string){}
 }

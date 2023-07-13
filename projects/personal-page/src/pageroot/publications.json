@@ -1,0 +1,20 @@
+[
+
+    {
+        "title": "VuLCAN: A Low-cost, Low-power Embedded Visible Light Communication And Networking Platform",
+        "year": 2019,
+        "authors": ["Artem Ageev", "Emiliano Luci", "Chiara Petrioli", "Nupur Thakker"],
+        "venue": "MSWIM",
+        "bib": "",
+        "pdf": "./assets/vulcan.pdf"
+    },
+
+    {
+        "title": "Shape from Release: Inverse Design and Fabrication of Controlled Release Structures",
+        "year": 2022,
+        "authors": ["Julian Panetta", "Haleh Mohammadian", "Emiliano Luci", "Vahid Babaei"],
+        "venue": "ACM SIGGRAPH Asia",
+        "bib": "",
+        "pdf": "./assets/shape_from_release.pdf"
+    }
+]

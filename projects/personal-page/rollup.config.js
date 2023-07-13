@@ -6,6 +6,7 @@ import { importMetaAssets } from '@web/rollup-plugin-import-meta-assets';
 import esbuild from 'rollup-plugin-esbuild';
 import { generateSW } from 'rollup-plugin-workbox';
 import path from 'path';
+import json from "@rollup/plugin-json";
 
 export default {
   input: 'index.html',
@@ -25,6 +26,8 @@ export default {
       injectServiceWorker: true,
       serviceWorkerPath: 'dist/sw.js',
     }),
+
+    json(),
     /** Resolve bare module imports */
     nodeResolve(),
     /** Minify JS, compile JS to a lower language target */

@@ -71,13 +71,13 @@ export class HeaderBrick extends LitElement {
 
   render() {
     return html`
-      <link rel="stylesheet" href="./src/pageroot/common.css" />
+      <link rel="stylesheet" href="./assets/common.css" />
       <div class="header_bar">
         <div><b>Emiliano Luci</b></div>
         <div><a href="#anchor-bio">Bio</a></div>
         <div><a href="#anchor-publications">Publications</a></div>
         <div>
-          <a class="cv" target="”_blank”" href="./assets/CV_emi.pdf">CV</a>
+          <a class="cv" target="_blank" href="./assets/CV_emi.pdf">CV</a>
         </div>
         <dark-mode-toggle
           id="dark-mode-toggle-2"

@@ -1,6 +1,5 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { lorem } from 'txtgen';
 
 @customElement('bio-brick')
 export class BioBrick extends LitElement {
@@ -13,7 +12,7 @@ export class BioBrick extends LitElement {
         z-index: 1;
         padding: 10px;
         box-sizing: border-box;
-        font-size: calc(10px + 1vmin);
+        font-size: calc(10px + .75vmin);
       }
 
       .pic_and_links {
@@ -48,12 +47,8 @@ export class BioBrick extends LitElement {
         flex-direction: column;
       }
 
-      a{
-        color: var(--color-link);
-      }
-
       p {
-        font-size: calc(10px + 1vmin);
+        font-size: calc(10px + .75vmin);
       }
 
       @media screen and (max-width: 20cm) {
@@ -71,7 +66,7 @@ export class BioBrick extends LitElement {
 
   render() {
     return html`
-      <link rel="stylesheet" href="./src/pageroot/common.css" />
+      <link rel="stylesheet" href="./assets/common.css" />
 
       <div class="pic_and_links">
         <div class="pic">
@@ -90,9 +85,9 @@ export class BioBrick extends LitElement {
       </div>
 
       <div class="description">
-        <span id="anchor-bio"><b>About me</b></span>
+        <span class='title' id="anchor-bio"><b>About me</b></span>
         <p>
-        I am a second-year PhD student at <a href="https://www.mpi-inf.mpg.de/home">MPI-INF</a> where I'm working in the <a href="https://aidam.mpi-inf.mpg.de/">AIDAM Group</a> in the field of digital fabrication. Before that I obtained my B.S. and M.S. from the CS Department at <a href="https://web.uniroma1.it/i3s/"> Università di Roma La Sapienza</a> working in embedded systems and wireless communications for the IoT. My main research interests are in inverse design problem with a focus on vision based approaches and physical simulation. 
+        I am a second-year PhD student at <a href="https://www.mpi-inf.mpg.de/home" target="_blank">MPI-INF</a> where I'm working in the <a href="https://aidam.mpi-inf.mpg.de/"  target="_blank">AIDAM Group</a> in the field of digital fabrication. Before that I obtained my B.S. and M.S. from the CS Department at <a href="https://web.uniroma1.it/i3s/"  target="_blank"> Università di Roma La Sapienza</a> working in embedded systems and wireless communications for the IoT. My main research interests are in inverse design problem with a focus on vision based approaches and physical simulation. 
   </p> 
     </div>
     `;

@@ -1,0 +1,43 @@
+{
+    "Emiliano Luci" : {
+        "name": "Emiliano Luci",
+        "link": "https://luci-e.github.io/",
+        "orcid": "0000-0002-9775-2254"
+    },
+
+    "Vahid Babaei" : {
+        "name": "Vahid Babaei",
+        "link": "https://aidam.mpi-inf.mpg.de/?view=people_vahid",
+        "orcid": "0000-0002-1480-9594"
+    },
+
+    "Haleh Mohammadian" : {
+        "name": "Haleh Mohammadian",
+        "link": "https://halehossadat.github.io/",
+        "orcid": "0000-0002-4688-3633"
+    },
+
+    "Julian Panetta" : {
+        "name": "Julian Panetta",
+        "link": "https://julianpanetta.com/",
+        "orcid": ""
+    },
+
+    "Artem Ageev" : {
+        "name": "Artem Ageev",
+        "link": "",
+        "orcid": ""
+    },
+
+    "Chiara Petrioli" : {
+        "name": "Chiara Petrioli",
+        "link": "https://www.diag.uniroma1.it/users/chiara_petrioli",
+        "orcid": "0000-0002-3240-5075"
+    },
+
+    "Nupur Thakker" : {
+        "name": "Nupur Thakker",
+        "link": "",
+        "orcid": ""
+    }
+}

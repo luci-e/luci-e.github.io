@@ -7,7 +7,7 @@ import './body/publications/publication-brick.js'
 
 @customElement('personal-page')
 export class PersonalPage extends LitElement {
-  @property({ type: String }) header = 'My app';
+  @property({ type: String }) header = 'Personal page';
 
   static styles = css`
     :host {
