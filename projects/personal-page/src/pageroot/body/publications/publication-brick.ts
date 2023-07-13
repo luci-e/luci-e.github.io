@@ -46,11 +46,19 @@ export class PublicationBrick extends LitElement {
   @state()
   publications : Array<publication> = [];
 
-  render_publication( pub: publication ){
+  formatName( name: string){
+    if( name === "Emiliano Luci"){
+      return html`<u>${name}</u>`;
+    }
+
+    return name;
+  }
+
+  renderPublication( pub: publication ){
     return html`
       <div>
       <b>${pub.title}</b><br>
-      ${pub.authors.map((auth) => html`<a href=${auth.link} target="_blank">${auth.name}  </a>`)}<br>
+      ${pub.authors.map((auth) => html`<a href=${auth.link} target="_blank"> ${this.formatName(auth.name)}</a>`)}<br>
       ${pub.venue} ${pub.year} <a href=${pub.pdf} target="_blank">[pdf]</a>
       </div>
       <hr>
@@ -63,7 +71,7 @@ export class PublicationBrick extends LitElement {
 
       <div class="publications_list">
         <span class='title' id="anchor-publications"><b>Publications</b></span><br>
-        ${this.publications.map( (pub) => this.render_publication(pub) )}
+        ${this.publications.map( (pub) => this.renderPublication(pub) )}
       </div>`;
   }
 }
