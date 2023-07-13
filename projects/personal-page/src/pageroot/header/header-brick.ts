@@ -55,17 +55,6 @@ export class HeaderBrick extends LitElement {
         --dark-mode-toggle-icon-size: 2rem;
         --dark-mode-toggle-icon-filter: invert(100%);
       }
-
-      .cv:link,
-      .cv:hover,
-      .cv:visited,
-      .cv:active {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      a {
-      }
     `,
   ];
 
@@ -77,7 +66,7 @@ export class HeaderBrick extends LitElement {
         <div><a href="#anchor-bio">Bio</a></div>
         <div><a href="#anchor-publications">Publications</a></div>
         <div>
-          <a class="cv" target="_blank" href="./assets/CV_emi.pdf">CV</a>
+          <a target="_blank" href="https://github.com/luci-e/luci-e.github.io/blob/master/assets/CV_emi.pdf">CV</a>
         </div>
         <dark-mode-toggle
           id="dark-mode-toggle-2"

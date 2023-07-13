@@ -6,7 +6,7 @@
         "authors": ["Artem Ageev", "Emiliano Luci", "Chiara Petrioli", "Nupur Thakker"],
         "venue": "MSWIM",
         "bib": "",
-        "pdf": "./assets/vulcan.pdf"
+        "pdf": "https://github.com/luci-e/luci-e.github.io/blob/master/assets/vulcan.pdf"
     },
 
     {
@@ -15,6 +15,6 @@
         "authors": ["Julian Panetta", "Haleh Mohammadian", "Emiliano Luci", "Vahid Babaei"],
         "venue": "ACM SIGGRAPH Asia",
         "bib": "",
-        "pdf": "./assets/shape_from_release.pdf"
+        "pdf": "https://github.com/luci-e/luci-e.github.io/blob/master/assets/shape_from_release.pdf"
     }
 ]
