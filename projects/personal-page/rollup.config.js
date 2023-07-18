@@ -59,8 +59,9 @@ export default {
     }),
     /** Create and inject a service worker */
     generateSW({
-      globIgnores: ['polyfills/*.js', 'nomodule-*.js'],
+      globIgnores: ['polyfills/*.js', 'nomodule-*.js', 'projects/**/*'],
       navigateFallback: '/index.html',
+      navigateFallbackDenylist: [/\/projects\/.*/],
       // where to output the generated sw
       swDest: path.join('dist', 'sw.js'),
       // directory to match patterns against to be precached
